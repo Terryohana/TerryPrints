@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { testimonialAvatars } from '../assets/imageUrls';
-
 const testimonials = [
   {
     id: 1,
     name: 'Sarah Johnson',
     role: 'Regular Customer',
-    avatar: testimonialAvatars[0],
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
     rating: 5,
     text: 'The quality of these cards is exceptional! I ordered custom birthday cards for my family and they were absolutely perfect. The printing was crisp and the paper quality was premium.'
   },
@@ -15,7 +13,7 @@ const testimonials = [
     id: 2,
     name: 'Michael Chen',
     role: 'Business Owner',
-    avatar: testimonialAvatars[1],
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
     rating: 4.5,
     text: 'We use TerryPrints for all our corporate greeting cards. The designs are professional and the ordering process is seamless. Our clients always appreciate the personal touch.'
   },
@@ -23,7 +21,7 @@ const testimonials = [
     id: 3,
     name: 'Emily Rodriguez',
     role: 'Wedding Planner',
-    avatar: testimonialAvatars[2],
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80',
     rating: 5,
     text: 'I recommend TerryPrints to all my wedding clients for their thank you cards. The customization options are endless and the quality is consistently outstanding.'
   }

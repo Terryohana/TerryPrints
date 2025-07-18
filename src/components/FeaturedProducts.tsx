@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
-import { productImages } from '../assets/imageUrls';
-
 // Sample product data
 const featuredProducts = [
   {
     id: '1',
     title: 'Elegant Birthday Card',
     price: 4.99,
-    image: productImages[4],
+    image: 'https://images.unsplash.com/photo-1606041008023-472dfb5b530f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     rating: 4.5,
     category: 'Birthday'
   },
@@ -18,7 +16,7 @@ const featuredProducts = [
     id: '2',
     title: 'Wedding Congratulations',
     price: 5.99,
-    image: productImages[1],
+    image: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     rating: 4.8,
     category: 'Wedding'
   },
@@ -26,7 +24,7 @@ const featuredProducts = [
     id: '3',
     title: 'Holiday Greetings',
     price: 3.99,
-    image: productImages[2],
+    image: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     rating: 4.2,
     category: 'Holiday'
   },
@@ -34,7 +32,7 @@ const featuredProducts = [
     id: '4',
     title: 'Thank You Card',
     price: 3.49,
-    image: productImages[3],
+    image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     rating: 4.7,
     category: 'Gratitude'
   }

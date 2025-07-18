@@ -1,30 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { categoryImages } from '../assets/imageUrls';
 
 const categories = [
   {
     id: 'birthday',
     title: 'Birthday Cards',
-    image: categoryImages.birthday,
+    image: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     count: 24
   },
   {
     id: 'wedding',
     title: 'Wedding Cards',
-    image: categoryImages.wedding,
+    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     count: 18
   },
   {
     id: 'holiday',
     title: 'Holiday Cards',
-    image: categoryImages.holiday,
+    image: 'https://images.unsplash.com/photo-1512909006721-3d6018887383?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     count: 32
   },
   {
     id: 'custom',
     title: 'Custom Cards',
-    image: categoryImages.custom,
+    image: 'https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     count: 15
   }
 ];

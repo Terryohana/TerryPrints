@@ -1,15 +1,4 @@
-import React from 'react';
-import { 
-  Card, 
-  CardMedia, 
-  CardContent, 
-  Typography, 
-  CardActions, 
-  Button, 
-  Box, 
-  Rating 
-} from '@mui/material';
-import { ShoppingCart, Favorite, FavoriteBorder } from '@mui/icons-material';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
@@ -29,124 +18,89 @@ const ProductCard: React.FC<ProductCardProps> = ({
   rating, 
   category 
 }) => {
-  const [favorite, setFavorite] = React.useState(false);
+  const [favorite, setFavorite] = useState(false);
+
+  // Function to render stars for rating
+  const renderStars = (rating: number) => {
+    const stars = [];
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<span key={`star-${i}`} className="star">★</span>);
+    }
+    
+    if (hasHalfStar) {
+      stars.push(<span key="half-star" className="star half">★</span>);
+    }
+    
+    const emptyStars = 5 - stars.length;
+    for (let i = 0; i < emptyStars; i++) {
+      stars.push(<span key={`empty-${i}`} className="star empty">☆</span>);
+    }
+    
+    return stars;
+  };
 
   return (
-    <Card 
-      sx={{ 
-        maxWidth: '100%', 
-        height: '100%', 
-        display: 'flex', 
-        flexDirection: 'column',
-        transition: 'transform 0.3s, box-shadow 0.3s',
-        '&:hover': {
-          transform: 'translateY(-5px)',
-          boxShadow: '0 12px 30px rgba(0,0,0,0.1)'
-        },
-        borderRadius: '12px',
-        overflow: 'hidden',
-        border: '1px solid rgba(0,0,0,0.05)'
-      }}
-    >
-      <Box sx={{ position: 'relative' }}>
-        <CardMedia
-          component="img"
-          height="200"
-          image={image}
-          alt={title}
-          sx={{ objectFit: 'cover' }}
-        />
-        <Button
-          size="small"
-          sx={{
-            position: 'absolute',
-            top: 10,
-            right: 10,
-            minWidth: 'auto',
-            p: 0.5,
-            borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.8)',
-            color: favorite ? 'error.main' : 'text.secondary',
-            '&:hover': {
-              backgroundColor: 'rgba(255,255,255,0.9)',
-            }
-          }}
+    <div className="card mb-4">
+      <div style={{ position: 'relative' }}>
+        <img src={image} alt={title} className="card-img" />
+        <button 
+          className="favorite-btn" 
           onClick={() => setFavorite(!favorite)}
-        >
-          {favorite ? <Favorite /> : <FavoriteBorder />}
-        </Button>
-        <Box
-          sx={{
+          style={{
             position: 'absolute',
-            top: 10,
-            left: 10,
-            backgroundColor: 'primary.main',
+            top: '10px',
+            right: '10px',
+            background: 'rgba(255,255,255,0.8)',
+            border: 'none',
+            borderRadius: '50%',
+            width: '36px',
+            height: '36px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            color: favorite ? '#e91e63' : '#666'
+          }}
+        >
+          {favorite ? '❤️' : '♡'}
+        </button>
+        <span 
+          style={{
+            position: 'absolute',
+            top: '10px',
+            left: '10px',
+            background: '#e91e63',
             color: 'white',
-            py: 0.5,
-            px: 1.5,
+            padding: '4px 12px',
             borderRadius: '20px',
             fontSize: '0.75rem',
-            fontWeight: 500,
-            letterSpacing: '0.5px'
+            fontWeight: 500
           }}
         >
           {category}
-        </Box>
-      </Box>
-      <CardContent sx={{ flexGrow: 1, pt: 2 }}>
-        <Typography 
-          gutterBottom 
-          variant="h6" 
-          component={Link} 
-          to={`/product/${id}`}
-          sx={{ 
-            textDecoration: 'none', 
-            color: 'text.primary',
-            fontWeight: 500,
-            display: 'block',
-            fontFamily: '"Playfair Display", serif',
-            fontSize: '1.1rem',
-            '&:hover': {
-              color: 'primary.main'
-            }
-          }}
-        >
-          {title}
-        </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-          <Rating value={rating} precision={0.5} size="small" readOnly />
-          <Typography variant="body2" color="text.secondary" sx={{ ml: 1 }}>
-            ({rating.toFixed(1)})
-          </Typography>
-        </Box>
-        <Typography 
-          variant="h6" 
-          color="primary" 
-          sx={{ 
-            fontWeight: 600,
-            fontFamily: '"Montserrat", sans-serif'
-          }}
-        >
+        </span>
+      </div>
+      <div className="card-body">
+        <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <h3 className="card-title">{title}</h3>
+        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px' }}>
+          <div style={{ color: '#ffc107', marginRight: '8px' }}>
+            {renderStars(rating)}
+          </div>
+          <span style={{ color: '#666', fontSize: '0.875rem' }}>({rating.toFixed(1)})</span>
+        </div>
+        <p className="elegant-heading" style={{ color: '#e91e63', fontWeight: 600, fontSize: '1.25rem', marginBottom: '16px' }}>
           ${price.toFixed(2)}
-        </Typography>
-      </CardContent>
-      <CardActions sx={{ p: 2, pt: 0 }}>
-        <Button 
-          variant="contained" 
-          fullWidth 
-          startIcon={<ShoppingCart />}
-          sx={{ 
-            borderRadius: '30px',
-            textTransform: 'none',
-            py: 1,
-            fontWeight: 500,
-            letterSpacing: '0.5px'
-          }}
-        >
+        </p>
+        <button className="btn btn-primary btn-block">
           Add to Cart
-        </Button>
-      </CardActions>
-    </Card>
+        </button>
+      </div>
+    </div>
   );
 };
 

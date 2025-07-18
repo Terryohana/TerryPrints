@@ -1,7 +1,6 @@
 import React from 'react';
-import { Container, Typography, Grid, Box, Button } from '@mui/material';
-import ProductCard from './ProductCard';
 import { Link } from 'react-router-dom';
+import ProductCard from './ProductCard';
 
 // Sample product data
 const featuredProducts = [
@@ -41,47 +40,22 @@ const featuredProducts = [
 
 const FeaturedProducts: React.FC = () => {
   return (
-    <Box sx={{ py: 8, backgroundColor: '#faf4f7' }}>
-      <Container maxWidth="lg">
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-          <Typography 
-            variant="h3" 
-            component="h2" 
-            className="script-heading"
-            sx={{ 
-              fontWeight: 500,
-              fontSize: { xs: '2.2rem', md: '3rem' }
-            }}
-          >
-            Featured Cards
-          </Typography>
-          <Button 
-            component={Link} 
-            to="/shop" 
-            variant="outlined" 
-            color="primary"
-            sx={{ 
-              borderRadius: '30px',
-              textTransform: 'none',
-              fontWeight: 400,
-              letterSpacing: '1px',
-              px: 3,
-              borderWidth: '1.5px'
-            }}
-          >
-            View All
-          </Button>
-        </Box>
+    <section className="section-padding" style={{ backgroundColor: '#faf4f7' }}>
+      <div className="container">
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h2 className="script-heading">Featured Cards</h2>
+          <Link to="/shop" className="btn btn-outline">View All</Link>
+        </div>
         
-        <Grid container spacing={3}>
+        <div className="row">
           {featuredProducts.map((product) => (
-            <Grid item xs={12} sm={6} md={3} key={product.id}>
+            <div className="col col-12 col-sm-6 col-md-3" key={product.id}>
               <ProductCard {...product} />
-            </Grid>
+            </div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 };
 

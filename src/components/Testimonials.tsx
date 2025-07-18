@@ -1,15 +1,4 @@
 import React from 'react';
-import { 
-  Box, 
-  Container, 
-  Typography, 
-  Grid, 
-  Card, 
-  CardContent, 
-  Avatar, 
-  Rating 
-} from '@mui/material';
-import { FormatQuote } from '@mui/icons-material';
 
 const testimonials = [
   {
@@ -38,114 +27,63 @@ const testimonials = [
   }
 ];
 
+// Function to render stars for rating
+const renderStars = (rating: number) => {
+  const stars = [];
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  
+  for (let i = 0; i < fullStars; i++) {
+    stars.push(<span key={`star-${i}`} className="star">★</span>);
+  }
+  
+  if (hasHalfStar) {
+    stars.push(<span key="half-star" className="star half">★</span>);
+  }
+  
+  const emptyStars = 5 - stars.length;
+  for (let i = 0; i < emptyStars; i++) {
+    stars.push(<span key={`empty-${i}`} className="star empty">☆</span>);
+  }
+  
+  return stars;
+};
+
 const Testimonials: React.FC = () => {
   return (
-    <Box sx={{ py: 8 }}>
-      <Container maxWidth="lg">
-        <Typography 
-          variant="h3" 
-          component="h2" 
-          className="script-heading"
-          sx={{ 
-            mb: 2, 
-            textAlign: 'center',
-            fontSize: { xs: '2.2rem', md: '3rem' },
-            fontWeight: 500
-          }}
-        >
-          What Our Customers Say
-        </Typography>
-        <Typography 
-          variant="body1" 
-          color="text.secondary" 
-          className="thin-text"
-          sx={{ 
-            mb: 6, 
-            textAlign: 'center', 
-            maxWidth: 700, 
-            mx: 'auto',
-            letterSpacing: '1px'
-          }}
-        >
+    <section className="section-padding">
+      <div className="container">
+        <h2 className="script-heading text-center mb-2">What Our Customers Say</h2>
+        <p className="thin-text text-center mb-5">
           Don't just take our word for it. Here's what our customers have to say about their experience with TerryPrints.
-        </Typography>
+        </p>
         
-        <Grid container spacing={4}>
+        <div className="row">
           {testimonials.map((testimonial) => (
-            <Grid item xs={12} md={4} key={testimonial.id}>
-              <Card 
-                sx={{ 
-                  height: '100%', 
-                  display: 'flex', 
-                  flexDirection: 'column',
-                  borderRadius: '12px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                  transition: 'transform 0.3s, box-shadow 0.3s',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                    boxShadow: '0 12px 30px rgba(0,0,0,0.1)'
-                  },
-                }}
-              >
-                <CardContent sx={{ flexGrow: 1, position: 'relative', pt: 5 }}>
-                  <FormatQuote 
-                    sx={{ 
-                      position: 'absolute', 
-                      top: 16, 
-                      left: 16, 
-                      fontSize: 40, 
-                      color: 'primary.light',
-                      opacity: 0.3
-                    }} 
+            <div className="col col-12 col-md-4" key={testimonial.id}>
+              <div className="card testimonial-card">
+                <div className="testimonial-quote">"</div>
+                <p className="testimonial-text">{testimonial.text}</p>
+                <div style={{ color: '#ffc107', marginBottom: '16px' }}>
+                  {renderStars(testimonial.rating)}
+                </div>
+                <div className="testimonial-author">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name} 
+                    className="testimonial-avatar"
                   />
-                  <Typography 
-                    variant="body1" 
-                    paragraph
-                    sx={{
-                      fontStyle: 'italic',
-                      fontWeight: 300,
-                      letterSpacing: '0.3px',
-                      lineHeight: 1.7
-                    }}
-                  >
-                    {testimonial.text}
-                  </Typography>
-                  <Rating value={testimonial.rating} precision={0.5} readOnly sx={{ mb: 2 }} />
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar 
-                      src={testimonial.avatar} 
-                      alt={testimonial.name}
-                      sx={{ width: 56, height: 56, mr: 2 }}
-                    />
-                    <Box>
-                      <Typography 
-                        variant="subtitle1" 
-                        sx={{
-                          fontWeight: 600,
-                          fontFamily: '"Playfair Display", serif'
-                        }}
-                      >
-                        {testimonial.name}
-                      </Typography>
-                      <Typography 
-                        variant="body2" 
-                        color="text.secondary"
-                        sx={{
-                          fontWeight: 300,
-                          letterSpacing: '0.5px'
-                        }}
-                      >
-                        {testimonial.role}
-                      </Typography>
-                    </Box>
-                  </Box>
-                </CardContent>
-              </Card>
-            </Grid>
+                  <div>
+                    <h4 className="testimonial-name">{testimonial.name}</h4>
+                    <p className="testimonial-role">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 };
 

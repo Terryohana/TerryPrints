@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container, Typography, Grid, Box, Paper } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const categories = [
@@ -31,109 +30,28 @@ const categories = [
 
 const Categories: React.FC = () => {
   return (
-    <Box sx={{ py: 8 }}>
-      <Container maxWidth="lg">
-        <Typography 
-          variant="h3" 
-          component="h2" 
-          className="script-heading"
-          sx={{ 
-            mb: 2, 
-            textAlign: 'center',
-            fontSize: { xs: '2.2rem', md: '3rem' },
-            fontWeight: 500
-          }}
-        >
-          Browse by Category
-        </Typography>
-        <Typography 
-          variant="body1" 
-          color="text.secondary" 
-          sx={{ 
-            mb: 6, 
-            textAlign: 'center', 
-            maxWidth: 700, 
-            mx: 'auto',
-            fontWeight: 300,
-            letterSpacing: '0.5px'
-          }}
-        >
+    <section className="section-padding">
+      <div className="container">
+        <h2 className="script-heading text-center mb-2">Browse by Category</h2>
+        <p className="thin-text text-center mb-5">
           Discover our beautiful collection of handcrafted cards for every special occasion
-        </Typography>
+        </p>
         
-        <Grid container spacing={3}>
+        <div className="row">
           {categories.map((category) => (
-            <Grid item xs={12} sm={6} md={3} key={category.id}>
-              <Paper
-                component={Link}
-                to={`/category/${category.id}`}
-                sx={{
-                  position: 'relative',
-                  height: 200,
-                  overflow: 'hidden',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textDecoration: 'none',
-                  color: 'white',
-                  transition: 'transform 0.3s, box-shadow 0.3s',
-                  '&:hover': {
-                    transform: 'scale(1.03)',
-                    boxShadow: '0 12px 30px rgba(0,0,0,0.15)'
-                  },
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'rgba(0,0,0,0.3)',
-                    zIndex: 1
-                  }
-                }}
-              >
-                <Box
-                  component="img"
-                  src={category.image}
-                  alt={category.title}
-                  sx={{
-                    position: 'absolute',
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-                <Box sx={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-                  <Typography 
-                    variant="h5" 
-                    className="script-heading"
-                    sx={{ 
-                      fontWeight: 600,
-                      mb: 1,
-                      fontSize: '1.8rem'
-                    }}
-                  >
-                    {category.title}
-                  </Typography>
-                  <Typography 
-                    variant="body2"
-                    sx={{
-                      fontWeight: 300,
-                      letterSpacing: '1px',
-                      opacity: 0.9
-                    }}
-                  >
-                    {category.count} Products
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
+            <div className="col col-12 col-sm-6 col-md-3" key={category.id}>
+              <Link to={`/category/${category.id}`} className="category-card">
+                <img src={category.image} alt={category.title} />
+                <div className="category-content">
+                  <h3 className="category-title">{category.title}</h3>
+                  <p className="category-count">{category.count} Products</p>
+                </div>
+              </Link>
+            </div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
+        </div>
+      </div>
+    </section>
   );
 };
 

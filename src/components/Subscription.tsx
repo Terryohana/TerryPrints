@@ -44,7 +44,7 @@ const Subscription: React.FC = () => {
     >
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center" justifyContent="center">
-          <Grid xs={12} md={6}>
+          <Grid item xs={12} md={6}>
             <Typography variant="h4" component="h2" fontWeight={600} gutterBottom>
               Subscribe to Our Newsletter
             </Typography>
@@ -94,7 +94,7 @@ const Subscription: React.FC = () => {
               </Button>
             </Paper>
           </Grid>
-          <Grid xs={12} md={5} sx={{ display: { xs: 'none', md: 'block' } }}>
+          <Grid item xs={12} md={5} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box
               sx={{
                 display: 'flex',

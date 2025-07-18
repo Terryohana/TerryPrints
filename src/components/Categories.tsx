@@ -39,7 +39,7 @@ const Categories: React.FC = () => {
         
         <Grid container spacing={3}>
           {categories.map((category) => (
-            <Grid key={category.id} xs={12} sm={6} md={3}>
+            <Grid item xs={12} sm={6} md={3} key={category.id}>
               <Paper
                 component={Link}
                 to={`/category/${category.id}`}

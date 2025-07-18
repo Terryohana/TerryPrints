@@ -14,7 +14,8 @@ import {
   Drawer,
   List,
   ListItem,
-  ListItemText
+  ListItemText,
+  ListItemButton
 } from '@mui/material';
 import { 
   ShoppingCart, 
@@ -53,8 +54,10 @@ const Navbar: React.FC = () => {
     <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
       <List>
         {menuItems.map((item) => (
-          <ListItem button key={item.title} component={Link} to={item.path}>
-            <ListItemText primary={item.title} />
+          <ListItem key={item.title} disablePadding>
+            <ListItemButton component={Link} to={item.path}>
+              <ListItemText primary={item.title} />
+            </ListItemButton>
           </ListItem>
         ))}
       </List>

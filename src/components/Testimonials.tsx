@@ -42,10 +42,31 @@ const Testimonials: React.FC = () => {
   return (
     <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" component="h2" fontWeight={600} sx={{ mb: 2, textAlign: 'center' }}>
+        <Typography 
+          variant="h3" 
+          component="h2" 
+          className="script-heading"
+          sx={{ 
+            mb: 2, 
+            textAlign: 'center',
+            fontSize: { xs: '2.2rem', md: '3rem' },
+            fontWeight: 500
+          }}
+        >
           What Our Customers Say
         </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 6, textAlign: 'center', maxWidth: 700, mx: 'auto' }}>
+        <Typography 
+          variant="body1" 
+          color="text.secondary" 
+          className="thin-text"
+          sx={{ 
+            mb: 6, 
+            textAlign: 'center', 
+            maxWidth: 700, 
+            mx: 'auto',
+            letterSpacing: '1px'
+          }}
+        >
           Don't just take our word for it. Here's what our customers have to say about their experience with TerryPrints.
         </Typography>
         
@@ -58,7 +79,12 @@ const Testimonials: React.FC = () => {
                   display: 'flex', 
                   flexDirection: 'column',
                   borderRadius: '12px',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.3s, box-shadow 0.3s',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 12px 30px rgba(0,0,0,0.1)'
+                  },
                 }}
               >
                 <CardContent sx={{ flexGrow: 1, position: 'relative', pt: 5 }}>
@@ -72,7 +98,16 @@ const Testimonials: React.FC = () => {
                       opacity: 0.3
                     }} 
                   />
-                  <Typography variant="body1" paragraph>
+                  <Typography 
+                    variant="body1" 
+                    paragraph
+                    sx={{
+                      fontStyle: 'italic',
+                      fontWeight: 300,
+                      letterSpacing: '0.3px',
+                      lineHeight: 1.7
+                    }}
+                  >
                     {testimonial.text}
                   </Typography>
                   <Rating value={testimonial.rating} precision={0.5} readOnly sx={{ mb: 2 }} />
@@ -83,10 +118,23 @@ const Testimonials: React.FC = () => {
                       sx={{ width: 56, height: 56, mr: 2 }}
                     />
                     <Box>
-                      <Typography variant="subtitle1" fontWeight={600}>
+                      <Typography 
+                        variant="subtitle1" 
+                        sx={{
+                          fontWeight: 600,
+                          fontFamily: '"Playfair Display", serif'
+                        }}
+                      >
                         {testimonial.name}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography 
+                        variant="body2" 
+                        color="text.secondary"
+                        sx={{
+                          fontWeight: 300,
+                          letterSpacing: '0.5px'
+                        }}
+                      >
                         {testimonial.role}
                       </Typography>
                     </Box>

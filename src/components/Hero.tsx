@@ -8,29 +8,65 @@ const Hero: React.FC = () => {
       sx={{
         bgcolor: 'primary.main',
         color: 'white',
-        py: 8,
-        backgroundImage: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
+        py: { xs: 8, md: 10 },
+        backgroundImage: 'linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%)',
         borderRadius: { xs: 0, md: '0 0 50px 50px' },
-        mb: 6
+        mb: 6,
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
+      {/* Decorative elements */}
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '300px',
+          height: '300px',
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.1)',
+          top: '-100px',
+          right: '-100px'
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.1)',
+          bottom: '-50px',
+          left: '10%'
+        }}
+      />
+      
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6}>
             <Typography
-              variant="h2"
+              variant="h1"
               component="h1"
+              className="fancy-script"
               sx={{
-                fontWeight: 700,
+                fontWeight: 400,
                 mb: 2,
-                fontSize: { xs: '2.5rem', md: '3.5rem' }
+                fontSize: { xs: '3rem', md: '4.5rem' },
+                lineHeight: 1.2,
+                color: '#4a0072'
               }}
             >
-              Beautiful Custom Cards for Every Occasion
+              Beautiful Custom Cards
             </Typography>
             <Typography
-              variant="h6"
-              sx={{ mb: 4, fontWeight: 400, opacity: 0.9 }}
+              variant="h5"
+              className="thin-text"
+              sx={{ 
+                mb: 4, 
+                fontWeight: 300, 
+                opacity: 0.9,
+                letterSpacing: '1px',
+                color: '#4a0072'
+              }}
             >
               Premium quality, personalized greeting cards delivered to your doorstep.
               Perfect for birthdays, weddings, holidays, and more.
@@ -43,14 +79,17 @@ const Hero: React.FC = () => {
                 color="secondary"
                 size="large"
                 sx={{
-                  fontWeight: 600,
+                  fontWeight: 500,
                   px: 4,
                   py: 1.5,
                   borderRadius: '30px',
                   backgroundColor: 'white',
                   color: 'primary.main',
+                  letterSpacing: '1px',
                   '&:hover': {
                     backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    transform: 'translateY(-3px)',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
                   }
                 }}
               >
@@ -62,15 +101,19 @@ const Hero: React.FC = () => {
                 variant="outlined"
                 size="large"
                 sx={{
-                  fontWeight: 600,
+                  fontWeight: 500,
                   px: 4,
                   py: 1.5,
                   borderRadius: '30px',
                   borderColor: 'white',
                   color: 'white',
+                  borderWidth: '2px',
+                  letterSpacing: '1px',
                   '&:hover': {
                     borderColor: 'white',
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    transform: 'translateY(-3px)',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
                   }
                 }}
               >
@@ -82,7 +125,7 @@ const Hero: React.FC = () => {
             <Box
               sx={{
                 position: 'relative',
-                height: '400px',
+                height: '450px',
                 width: '100%',
                 overflow: 'hidden',
                 borderRadius: '20px',
@@ -94,7 +137,7 @@ const Hero: React.FC = () => {
                   left: 0,
                   width: '100%',
                   height: '100%',
-                  backgroundColor: 'rgba(0,0,0,0.2)',
+                  backgroundColor: 'rgba(0,0,0,0.1)',
                   zIndex: 1
                 }
               }}

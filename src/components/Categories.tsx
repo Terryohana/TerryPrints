@@ -33,8 +33,32 @@ const Categories: React.FC = () => {
   return (
     <Box sx={{ py: 8 }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" component="h2" fontWeight={600} sx={{ mb: 4, textAlign: 'center' }}>
+        <Typography 
+          variant="h3" 
+          component="h2" 
+          className="script-heading"
+          sx={{ 
+            mb: 2, 
+            textAlign: 'center',
+            fontSize: { xs: '2.2rem', md: '3rem' },
+            fontWeight: 500
+          }}
+        >
           Browse by Category
+        </Typography>
+        <Typography 
+          variant="body1" 
+          color="text.secondary" 
+          sx={{ 
+            mb: 6, 
+            textAlign: 'center', 
+            maxWidth: 700, 
+            mx: 'auto',
+            fontWeight: 300,
+            letterSpacing: '0.5px'
+          }}
+        >
+          Discover our beautiful collection of handcrafted cards for every special occasion
         </Typography>
         
         <Grid container spacing={3}>
@@ -53,9 +77,10 @@ const Categories: React.FC = () => {
                   justifyContent: 'center',
                   textDecoration: 'none',
                   color: 'white',
-                  transition: 'transform 0.3s',
+                  transition: 'transform 0.3s, box-shadow 0.3s',
                   '&:hover': {
-                    transform: 'scale(1.03)'
+                    transform: 'scale(1.03)',
+                    boxShadow: '0 12px 30px rgba(0,0,0,0.15)'
                   },
                   '&::before': {
                     content: '""',
@@ -64,7 +89,7 @@ const Categories: React.FC = () => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundColor: 'rgba(0,0,0,0.4)',
+                    backgroundColor: 'rgba(0,0,0,0.3)',
                     zIndex: 1
                   }
                 }}
@@ -81,10 +106,25 @@ const Categories: React.FC = () => {
                   }}
                 />
                 <Box sx={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-                  <Typography variant="h5" fontWeight={600} gutterBottom>
+                  <Typography 
+                    variant="h5" 
+                    className="script-heading"
+                    sx={{ 
+                      fontWeight: 600,
+                      mb: 1,
+                      fontSize: '1.8rem'
+                    }}
+                  >
                     {category.title}
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography 
+                    variant="body2"
+                    sx={{
+                      fontWeight: 300,
+                      letterSpacing: '1px',
+                      opacity: 0.9
+                    }}
+                  >
                     {category.count} Products
                   </Typography>
                 </Box>

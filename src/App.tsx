@@ -4,42 +4,62 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
+import './index.css';
 
-// Create a custom theme
+// Create a custom theme with elegant, feminine styling
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#6a11cb',
-      light: '#8e44ad',
-      dark: '#4a148c',
+      main: '#e91e63',
+      light: '#f48fb1',
+      dark: '#c2185b',
     },
     secondary: {
-      main: '#2575fc',
-      light: '#4dabf5',
-      dark: '#1565c0',
+      main: '#9c27b0',
+      light: '#ba68c8',
+      dark: '#7b1fa2',
     },
     background: {
-      default: '#f8f9fa',
+      default: '#fdfbf9',
+      paper: '#ffffff',
+    },
+    text: {
+      primary: '#333333',
+      secondary: '#666666',
     },
   },
   typography: {
-    fontFamily: '"Poppins", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontWeight: 700,
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 600,
+      letterSpacing: '0.5px',
     },
     h2: {
-      fontWeight: 700,
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 600,
+      letterSpacing: '0.5px',
     },
     h3: {
-      fontWeight: 600,
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
     },
     h4: {
-      fontWeight: 600,
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 500,
+      letterSpacing: '0.5px',
     },
     h5: {
+      fontFamily: '"Playfair Display", serif',
       fontWeight: 500,
     },
     h6: {
+      fontFamily: '"Montserrat", sans-serif',
+      fontWeight: 500,
+    },
+    button: {
+      textTransform: 'none',
       fontWeight: 500,
     },
   },
@@ -50,15 +70,26 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none',
-          fontWeight: 500,
+          borderRadius: 30,
+          padding: '10px 24px',
+        },
+        contained: {
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+          borderRadius: 12,
+          boxShadow: '0 6px 20px rgba(0,0,0,0.05)',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        rounded: {
+          borderRadius: 12,
         },
       },
     },
@@ -74,14 +105,6 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           {/* Add more routes as needed */}
-          {/* <Route path="/shop" element={<ShopPage />} /> */}
-          {/* <Route path="/product/:id" element={<ProductPage />} /> */}
-          {/* <Route path="/category/:category" element={<CategoryPage />} /> */}
-          {/* <Route path="/cart" element={<CartPage />} /> */}
-          {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
-          {/* <Route path="/about" element={<AboutPage />} /> */}
-          {/* <Route path="/contact" element={<ContactPage />} /> */}
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>
         <Footer />
       </Router>

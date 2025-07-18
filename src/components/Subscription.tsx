@@ -39,16 +39,62 @@ const Subscription: React.FC = () => {
         py: 8, 
         backgroundColor: 'primary.main',
         color: 'white',
-        backgroundImage: 'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)',
+        backgroundImage: 'linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%)',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
+      {/* Decorative elements */}
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '300px',
+          height: '300px',
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.1)',
+          top: '-150px',
+          left: '-100px'
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          background: 'rgba(255,255,255,0.1)',
+          bottom: '-80px',
+          right: '10%'
+        }}
+      />
+      
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center" justifyContent="center">
           <Grid item xs={12} md={6}>
-            <Typography variant="h4" component="h2" fontWeight={600} gutterBottom>
+            <Typography 
+              variant="h3" 
+              component="h2" 
+              className="script-heading"
+              sx={{ 
+                fontWeight: 500,
+                mb: 2,
+                fontSize: { xs: '2.2rem', md: '3rem' },
+                color: '#4a0072'
+              }}
+            >
               Subscribe to Our Newsletter
             </Typography>
-            <Typography variant="body1" sx={{ mb: 4, opacity: 0.9 }}>
+            <Typography 
+              variant="body1" 
+              className="thin-text"
+              sx={{ 
+                mb: 4, 
+                opacity: 0.9,
+                letterSpacing: '1px',
+                lineHeight: 1.7,
+                color: '#4a0072'
+              }}
+            >
               Stay updated with our latest card designs, exclusive offers, and seasonal promotions.
               Subscribe now and get 10% off your first order!
             </Typography>
@@ -63,6 +109,7 @@ const Subscription: React.FC = () => {
                 width: '100%',
                 borderRadius: '50px',
                 backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
               }}
             >
               <MailOutline sx={{ color: 'text.secondary', ml: 2 }} />
@@ -87,7 +134,8 @@ const Subscription: React.FC = () => {
                   px: 3,
                   py: 1,
                   textTransform: 'none',
-                  fontWeight: 600
+                  fontWeight: 500,
+                  letterSpacing: '1px'
                 }}
               >
                 Subscribe

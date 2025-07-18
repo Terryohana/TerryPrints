@@ -52,22 +52,108 @@ const Navbar: React.FC = () => {
 
   const drawer = (
     <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(false)}>
+      <Box sx={{ p: 3, textAlign: 'center' }}>
+        <Typography 
+          variant="h6" 
+          className="fancy-script"
+          sx={{ 
+            fontWeight: 400,
+            fontSize: '2rem',
+            color: 'primary.main',
+            mb: 2
+          }}
+        >
+          TerryPrints
+        </Typography>
+      </Box>
       <List>
         {menuItems.map((item) => (
           <ListItem key={item.title} disablePadding>
-            <ListItemButton component={Link} to={item.path}>
-              <ListItemText primary={item.title} />
+            <ListItemButton 
+              component={Link} 
+              to={item.path}
+              sx={{
+                py: 1.5,
+                px: 3,
+                '&:hover': {
+                  backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                }
+              }}
+            >
+              <ListItemText 
+                primary={item.title} 
+                primaryTypographyProps={{
+                  sx: {
+                    fontWeight: 300,
+                    letterSpacing: '0.5px'
+                  }
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem disablePadding>
+          <ListItemButton 
+            component={Link} 
+            to="/about"
+            sx={{
+              py: 1.5,
+              px: 3,
+              '&:hover': {
+                backgroundColor: 'rgba(233, 30, 99, 0.08)'
+              }
+            }}
+          >
+            <ListItemText 
+              primary="About" 
+              primaryTypographyProps={{
+                sx: {
+                  fontWeight: 300,
+                  letterSpacing: '0.5px'
+                }
+              }}
+            />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton 
+            component={Link} 
+            to="/contact"
+            sx={{
+              py: 1.5,
+              px: 3,
+              '&:hover': {
+                backgroundColor: 'rgba(233, 30, 99, 0.08)'
+              }
+            }}
+          >
+            <ListItemText 
+              primary="Contact" 
+              primaryTypographyProps={{
+                sx: {
+                  fontWeight: 300,
+                  letterSpacing: '0.5px'
+                }
+              }}
+            />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
 
   return (
-    <AppBar position="static" color="default" elevation={1} sx={{ backgroundColor: 'white' }}>
+    <AppBar 
+      position="static" 
+      color="default" 
+      elevation={0} 
+      sx={{ 
+        backgroundColor: 'white',
+        borderBottom: '1px solid rgba(0,0,0,0.05)'
+      }}
+    >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ py: 1 }}>
           {isMobile && (
             <IconButton
               size="large"
@@ -86,11 +172,12 @@ const Navbar: React.FC = () => {
             noWrap
             component={Link}
             to="/"
+            className="fancy-script"
             sx={{
               mr: 2,
               display: 'flex',
-              fontFamily: 'Poppins',
-              fontWeight: 700,
+              fontWeight: 400,
+              fontSize: '2rem',
               color: 'primary.main',
               textDecoration: 'none',
               flexGrow: isMobile ? 1 : 0
@@ -103,7 +190,16 @@ const Navbar: React.FC = () => {
             <Box sx={{ flexGrow: 1, display: 'flex' }}>
               <Button 
                 onClick={handleMenuOpen}
-                sx={{ my: 2, color: 'text.primary', display: 'block' }}
+                sx={{ 
+                  mx: 1, 
+                  color: 'text.primary', 
+                  display: 'block',
+                  fontWeight: 300,
+                  letterSpacing: '0.5px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                  }
+                }}
               >
                 Categories
               </Button>
@@ -111,6 +207,13 @@ const Navbar: React.FC = () => {
                 anchorEl={anchorEl}
                 open={Boolean(anchorEl)}
                 onClose={handleMenuClose}
+                PaperProps={{
+                  sx: {
+                    mt: 1,
+                    borderRadius: '8px',
+                    boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
+                  }
+                }}
               >
                 {menuItems.map((item) => (
                   <MenuItem 
@@ -118,6 +221,14 @@ const Navbar: React.FC = () => {
                     onClick={handleMenuClose}
                     component={Link}
                     to={item.path}
+                    sx={{
+                      fontWeight: 300,
+                      letterSpacing: '0.5px',
+                      py: 1,
+                      '&:hover': {
+                        backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                      }
+                    }}
                   >
                     {item.title}
                   </MenuItem>
@@ -126,14 +237,32 @@ const Navbar: React.FC = () => {
               <Button
                 component={Link}
                 to="/about"
-                sx={{ my: 2, color: 'text.primary', display: 'block' }}
+                sx={{ 
+                  mx: 1, 
+                  color: 'text.primary', 
+                  display: 'block',
+                  fontWeight: 300,
+                  letterSpacing: '0.5px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                  }
+                }}
               >
                 About
               </Button>
               <Button
                 component={Link}
                 to="/contact"
-                sx={{ my: 2, color: 'text.primary', display: 'block' }}
+                sx={{ 
+                  mx: 1, 
+                  color: 'text.primary', 
+                  display: 'block',
+                  fontWeight: 300,
+                  letterSpacing: '0.5px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                  }
+                }}
               >
                 Contact
               </Button>
@@ -141,13 +270,41 @@ const Navbar: React.FC = () => {
           )}
 
           <Box sx={{ display: 'flex' }}>
-            <IconButton color="inherit" aria-label="search">
+            <IconButton 
+              color="inherit" 
+              aria-label="search"
+              sx={{
+                '&:hover': {
+                  backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                }
+              }}
+            >
               <Search />
             </IconButton>
-            <IconButton color="inherit" aria-label="account" component={Link} to="/account">
+            <IconButton 
+              color="inherit" 
+              aria-label="account" 
+              component={Link} 
+              to="/account"
+              sx={{
+                '&:hover': {
+                  backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                }
+              }}
+            >
               <Person />
             </IconButton>
-            <IconButton color="inherit" aria-label="cart" component={Link} to="/cart">
+            <IconButton 
+              color="inherit" 
+              aria-label="cart" 
+              component={Link} 
+              to="/cart"
+              sx={{
+                '&:hover': {
+                  backgroundColor: 'rgba(233, 30, 99, 0.08)'
+                }
+              }}
+            >
               <ShoppingCart />
             </IconButton>
           </Box>

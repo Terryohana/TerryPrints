@@ -41,20 +41,32 @@ const featuredProducts = [
 
 const FeaturedProducts: React.FC = () => {
   return (
-    <Box sx={{ py: 8, backgroundColor: '#f8f9fa' }}>
+    <Box sx={{ py: 8, backgroundColor: '#faf4f7' }}>
       <Container maxWidth="lg">
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-          <Typography variant="h4" component="h2" fontWeight={600}>
+          <Typography 
+            variant="h3" 
+            component="h2" 
+            className="script-heading"
+            sx={{ 
+              fontWeight: 500,
+              fontSize: { xs: '2.2rem', md: '3rem' }
+            }}
+          >
             Featured Cards
           </Typography>
           <Button 
             component={Link} 
             to="/shop" 
             variant="outlined" 
+            color="primary"
             sx={{ 
-              borderRadius: '8px',
+              borderRadius: '30px',
               textTransform: 'none',
-              fontWeight: 500
+              fontWeight: 400,
+              letterSpacing: '1px',
+              px: 3,
+              borderWidth: '1.5px'
             }}
           >
             View All

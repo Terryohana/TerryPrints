@@ -41,10 +41,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
         transition: 'transform 0.3s, box-shadow 0.3s',
         '&:hover': {
           transform: 'translateY(-5px)',
-          boxShadow: '0 10px 20px rgba(0,0,0,0.1)'
+          boxShadow: '0 12px 30px rgba(0,0,0,0.1)'
         },
         borderRadius: '12px',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        border: '1px solid rgba(0,0,0,0.05)'
       }}
     >
       <Box sx={{ position: 'relative' }}>
@@ -85,7 +86,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
             px: 1.5,
             borderRadius: '20px',
             fontSize: '0.75rem',
-            fontWeight: 600
+            fontWeight: 500,
+            letterSpacing: '0.5px'
           }}
         >
           {category}
@@ -100,8 +102,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           sx={{ 
             textDecoration: 'none', 
             color: 'text.primary',
-            fontWeight: 600,
+            fontWeight: 500,
             display: 'block',
+            fontFamily: '"Playfair Display", serif',
+            fontSize: '1.1rem',
             '&:hover': {
               color: 'primary.main'
             }
@@ -115,7 +119,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
             ({rating.toFixed(1)})
           </Typography>
         </Box>
-        <Typography variant="h6" color="primary" fontWeight={600}>
+        <Typography 
+          variant="h6" 
+          color="primary" 
+          sx={{ 
+            fontWeight: 600,
+            fontFamily: '"Montserrat", sans-serif'
+          }}
+        >
           ${price.toFixed(2)}
         </Typography>
       </CardContent>
@@ -125,9 +136,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
           fullWidth 
           startIcon={<ShoppingCart />}
           sx={{ 
-            borderRadius: '8px',
+            borderRadius: '30px',
             textTransform: 'none',
-            py: 1
+            py: 1,
+            fontWeight: 500,
+            letterSpacing: '0.5px'
           }}
         >
           Add to Cart

@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
           <div className="col col-12 col-md-6 d-none d-md-block">
             <div className="hero-img">
               <img 
-                src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.pexels.com/photos/6709925/pexels-photo-6709925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
                 alt="Elegant greeting cards showcase" 
               />
             </div>

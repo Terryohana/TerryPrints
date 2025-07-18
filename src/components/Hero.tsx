@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { heroImages } from '../assets/imageUrls';
 
 const Hero: React.FC = () => {
   return (
@@ -20,8 +21,8 @@ const Hero: React.FC = () => {
           <div className="col col-12 col-md-6 d-none d-md-block">
             <div className="hero-img">
               <img 
-                src="https://source.unsplash.com/random/600x400/?greeting,cards" 
-                alt="Greeting cards showcase" 
+                src={heroImages[0]} 
+                alt="Elegant greeting cards showcase" 
               />
             </div>
           </div>

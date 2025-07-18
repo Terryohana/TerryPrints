@@ -1,29 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { categoryImages } from '../assets/imageUrls';
 
 const categories = [
   {
     id: 'birthday',
     title: 'Birthday Cards',
-    image: 'https://source.unsplash.com/random/600x400/?birthday',
+    image: categoryImages.birthday,
     count: 24
   },
   {
     id: 'wedding',
     title: 'Wedding Cards',
-    image: 'https://source.unsplash.com/random/600x400/?wedding',
+    image: categoryImages.wedding,
     count: 18
   },
   {
     id: 'holiday',
     title: 'Holiday Cards',
-    image: 'https://source.unsplash.com/random/600x400/?christmas',
+    image: categoryImages.holiday,
     count: 32
   },
   {
     id: 'custom',
     title: 'Custom Cards',
-    image: 'https://source.unsplash.com/random/600x400/?design',
+    image: categoryImages.custom,
     count: 15
   }
 ];

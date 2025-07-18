@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { testimonialAvatars } from '../assets/imageUrls';
+
 const testimonials = [
   {
     id: 1,
     name: 'Sarah Johnson',
     role: 'Regular Customer',
-    avatar: 'https://source.unsplash.com/random/100x100/?woman,portrait,1',
+    avatar: testimonialAvatars[0],
     rating: 5,
     text: 'The quality of these cards is exceptional! I ordered custom birthday cards for my family and they were absolutely perfect. The printing was crisp and the paper quality was premium.'
   },
@@ -13,7 +15,7 @@ const testimonials = [
     id: 2,
     name: 'Michael Chen',
     role: 'Business Owner',
-    avatar: 'https://source.unsplash.com/random/100x100/?man,portrait,1',
+    avatar: testimonialAvatars[1],
     rating: 4.5,
     text: 'We use TerryPrints for all our corporate greeting cards. The designs are professional and the ordering process is seamless. Our clients always appreciate the personal touch.'
   },
@@ -21,7 +23,7 @@ const testimonials = [
     id: 3,
     name: 'Emily Rodriguez',
     role: 'Wedding Planner',
-    avatar: 'https://source.unsplash.com/random/100x100/?woman,portrait,2',
+    avatar: testimonialAvatars[2],
     rating: 5,
     text: 'I recommend TerryPrints to all my wedding clients for their thank you cards. The customization options are endless and the quality is consistently outstanding.'
   }

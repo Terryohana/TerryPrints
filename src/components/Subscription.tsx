@@ -70,7 +70,7 @@ const Subscription: React.FC = () => {
               height: '100%' 
             }}>
               <img
-                src="https://source.unsplash.com/random/600x400/?newsletter,mail"
+                src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
                 alt="Newsletter"
                 style={{
                   maxWidth: '100%',

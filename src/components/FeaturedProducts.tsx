@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
+import { productImages } from '../assets/imageUrls';
+
 // Sample product data
 const featuredProducts = [
   {
     id: '1',
     title: 'Elegant Birthday Card',
     price: 4.99,
-    image: 'https://source.unsplash.com/random/600x400/?birthday,card',
+    image: productImages[4],
     rating: 4.5,
     category: 'Birthday'
   },
@@ -16,7 +18,7 @@ const featuredProducts = [
     id: '2',
     title: 'Wedding Congratulations',
     price: 5.99,
-    image: 'https://source.unsplash.com/random/600x400/?wedding,card',
+    image: productImages[1],
     rating: 4.8,
     category: 'Wedding'
   },
@@ -24,7 +26,7 @@ const featuredProducts = [
     id: '3',
     title: 'Holiday Greetings',
     price: 3.99,
-    image: 'https://source.unsplash.com/random/600x400/?christmas,card',
+    image: productImages[2],
     rating: 4.2,
     category: 'Holiday'
   },
@@ -32,7 +34,7 @@ const featuredProducts = [
     id: '4',
     title: 'Thank You Card',
     price: 3.49,
-    image: 'https://source.unsplash.com/random/600x400/?thank,you,card',
+    image: productImages[3],
     rating: 4.7,
     category: 'Gratitude'
   }

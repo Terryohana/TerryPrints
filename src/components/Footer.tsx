@@ -13,18 +13,18 @@ const Footer: React.FC = () => {
               We help you celebrate life's special moments with beautiful, custom-designed cards.
             </p>
             <div className="social-icons">
-              <a href="#" className="social-icon">
+              <button className="social-icon" aria-label="Facebook">
                 <i className="fab fa-facebook-f">f</i>
-              </a>
-              <a href="#" className="social-icon">
+              </button>
+              <button className="social-icon" aria-label="Twitter">
                 <i className="fab fa-twitter">t</i>
-              </a>
-              <a href="#" className="social-icon">
+              </button>
+              <button className="social-icon" aria-label="Instagram">
                 <i className="fab fa-instagram">i</i>
-              </a>
-              <a href="#" className="social-icon">
+              </button>
+              <button className="social-icon" aria-label="Pinterest">
                 <i className="fab fa-pinterest-p">p</i>
-              </a>
+              </button>
             </div>
           </div>
           

@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
     <Box sx={{ bgcolor: '#f8f9fa', pt: 8, pb: 4 }}>
       <Container maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item={true} xs={12} sm={6} md={3}>
             <Typography variant="h6" fontWeight={600} gutterBottom>
               TerryPrints
             </Typography>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
             </Box>
           </Grid>
           
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item={true} xs={12} sm={6} md={3}>
             <Typography variant="h6" fontWeight={600} gutterBottom>
               Quick Links
             </Typography>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
             </List>
           </Grid>
           
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item={true} xs={12} sm={6} md={3}>
             <Typography variant="h6" fontWeight={600} gutterBottom>
               Categories
             </Typography>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
             </List>
           </Grid>
           
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item={true} xs={12} sm={6} md={3}>
             <Typography variant="h6" fontWeight={600} gutterBottom>
               Contact Us
             </Typography>
